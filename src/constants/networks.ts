@@ -124,6 +124,6 @@ export const SUPPORTED_NETWORK_VERSIONS: NetworkInfo[] = [
   // ArbitrumNetworkInfo,
   // CeloNetworkInfo,
   // BNBNetworkInfo,
-  // BaseNetworkInfo,
+  BaseNetworkInfo,
   // AvalancheNetworkInfo,
 ]

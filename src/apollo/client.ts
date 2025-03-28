@@ -172,7 +172,10 @@ export const optimismClient = new ApolloClient({
 })
 
 export const baseClient = new ApolloClient({
-  uri: 'https://api.studio.thegraph.com/query/48211/uniswap-v3-base/version/latest?source=uniswap',
+  uri: 'https://gateway.thegraph.com/api/subgraphs/id/3NUY93m3pDzhT4numRAoxVaKWUhrQPBu6KZ5feeB5igy',
+  headers: {
+    authorization: `Bearer abe84ae98ff6b28588d7319b50f88c5e`,
+  },
   cache: new InMemoryCache({
     typePolicies: {
       Token: {
@@ -200,7 +203,10 @@ export const baseClient = new ApolloClient({
 })
 
 export const baseBlockClient = new ApolloClient({
-  uri: 'https://api.studio.thegraph.com/query/48211/base-blocks/version/latest',
+  uri: 'https://gateway.thegraph.com/api/subgraphs/id/8k66QCiBQGaTE4Vg62UpQL9Umhr5JQ3V6KcPNy1vvBaT',
+  headers: {
+    authorization: `Bearer abe84ae98ff6b28588d7319b50f88c5e`,
+  },
   cache: new InMemoryCache(),
   queryDeduplication: true,
   defaultOptions: {
