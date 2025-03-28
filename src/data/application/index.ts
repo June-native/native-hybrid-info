@@ -4,34 +4,49 @@ import { useQuery } from '@apollo/client'
 import gql from 'graphql-tag'
 import { ArbitrumNetworkInfo, EthereumNetworkInfo } from 'constants/networks'
 
+// export const SUBGRAPH_HEALTH = gql`
+//   query health($name: Bytes) {
+//     indexingStatusForCurrentVersion(subgraphName: $name, subgraphError: allow) {
+//       synced
+//       health
+//       chains {
+//         chainHeadBlock {
+//           number
+//         }
+//         latestBlock {
+//           number
+//         }
+//       }
+//     }
+//   }
+// `
+
 export const SUBGRAPH_HEALTH = gql`
-  query health($name: Bytes) {
-    indexingStatusForCurrentVersion(subgraphName: $name, subgraphError: allow) {
-      synced
-      health
-      chains {
-        chainHeadBlock {
-          number
-        }
-        latestBlock {
-          number
-        }
+  query health {
+    _meta {
+      block {
+        number
       }
     }
   }
 `
 
 interface HealthResponse {
-  indexingStatusForCurrentVersion: {
-    chains: {
-      chainHeadBlock: {
-        number: string
-      }
-      latestBlock: {
-        number: string
-      }
-    }[]
-    synced: boolean
+  // indexingStatusForCurrentVersion: {
+  //   chains: {
+  //     chainHeadBlock: {
+  //       number: string
+  //     }
+  //     latestBlock: {
+  //       number: string
+  //     }
+  //   }[]
+  //   synced: boolean
+  // }
+  _meta: {
+    block: {
+      number: string
+    }
   }
 }
 
@@ -58,7 +73,7 @@ export function useFetchedSubgraphStatus(): {
     },
   })
 
-  const parsed = data?.indexingStatusForCurrentVersion
+  const parsed = data?._meta
 
   if (loading) {
     return {
@@ -76,8 +91,10 @@ export function useFetchedSubgraphStatus(): {
     }
   }
 
-  const syncedBlock = parsed?.chains[0].latestBlock.number
-  const headBlock = parsed?.chains[0].chainHeadBlock.number
+  const syncedBlock = parsed?.block.number
+  const headBlock = parsed?.block.number
+
+  console.log(syncedBlock)
 
   return {
     available: true,

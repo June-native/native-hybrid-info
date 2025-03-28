@@ -1,12 +1,18 @@
 import { ApolloClient, InMemoryCache } from '@apollo/client'
 
 export const healthClient = new ApolloClient({
-  uri: 'https://api.thegraph.com/index-node/graphql',
+  uri: 'https://gateway.thegraph.com/api/subgraphs/id/9A6bkprqEG2XsZUYJ5B2XXp6ymz9fNcn4tVPxMWDztYC',
+  headers: {
+    authorization: `Bearer abe84ae98ff6b28588d7319b50f88c5e`,
+  },
   cache: new InMemoryCache(),
 })
 
 export const blockClient = new ApolloClient({
-  uri: 'https://api.thegraph.com/subgraphs/name/blocklytics/ethereum-blocks',
+  uri: 'https://gateway.thegraph.com/api/subgraphs/id/9A6bkprqEG2XsZUYJ5B2XXp6ymz9fNcn4tVPxMWDztYC',
+  headers: {
+    authorization: `Bearer abe84ae98ff6b28588d7319b50f88c5e`,
+  },
   cache: new InMemoryCache(),
   queryDeduplication: true,
   defaultOptions: {
@@ -21,7 +27,7 @@ export const blockClient = new ApolloClient({
 })
 
 export const client = new ApolloClient({
-  uri: 'https://api.thegraph.com/subgraphs/name/uniswap/uniswap-v3?source=uniswap',
+  uri: 'https://gateway.thegraph.com/api/subgraphs/id/5zvR82QoaXYFyDEKLZ9t6v9adgnptxYpKpSbxtgVENFV',
   cache: new InMemoryCache({
     typePolicies: {
       Token: {
@@ -36,6 +42,9 @@ export const client = new ApolloClient({
       },
     },
   }),
+  headers: {
+    authorization: `Bearer abe84ae98ff6b28588d7319b50f88c5e`,
+  },
   queryDeduplication: true,
   defaultOptions: {
     watchQuery: {
