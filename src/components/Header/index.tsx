@@ -2,7 +2,6 @@ import React from 'react'
 import { NavLink, useLocation } from 'react-router-dom'
 import { darken } from 'polished'
 import styled from 'styled-components'
-import LogoDark from '../../assets/svg/logo_white.svg'
 import Menu from '../Menu'
 import Row, { RowFixed, RowBetween } from '../Row'
 import SearchSmall from 'components/Search'
@@ -64,27 +63,6 @@ const HeaderLinks = styled(Row)`
   @media (max-width: 1080px) {
     padding: 0.5rem;
     justify-content: flex-end;
-  }
-`
-
-const Title = styled(NavLink)`
-  display: flex;
-  align-items: center;
-  pointer-events: auto;
-  justify-self: flex-start;
-  margin-right: 12px;
-  :hover {
-    cursor: pointer;
-  }
-  ${({ theme }) => theme.mediaWidth.upToSmall`
-    justify-self: center;
-  `};
-`
-
-const UniIcon = styled.div`
-  transition: transform 0.3s ease;
-  :hover {
-    transform: rotate(-5deg);
   }
 `
 
@@ -157,11 +135,6 @@ export default function Header() {
   return (
     <HeaderFrame>
       <HeaderRow>
-        <Title to={networkPrefix(activeNewtork)}>
-          <UniIcon>
-            <img width={'24px'} src={LogoDark} alt="logo" />
-          </UniIcon>
-        </Title>
         <HeaderLinks>
           <StyledNavLink id={`pool-nav-link`} to={networkPrefix(activeNewtork)} $isActive={pathname === '/'}>
             Overview

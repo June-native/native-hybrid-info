@@ -89,6 +89,8 @@ export default function Menu() {
 
   useOnClickOutside(node, isOpen ? () => setOpen(false) : undefined)
 
+  return
+
   return (
     <StyledMenu ref={node}>
       <StyledMenuButton onClick={() => setOpen((open) => !open)}>
