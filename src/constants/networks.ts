@@ -7,6 +7,8 @@ import BNB_LOGO_URL from '../assets/images/bnb-logo.svg'
 import BASE_LOGO_URL from '../assets/images/base-logo.svg'
 import { ChainId } from '@uniswap/sdk-core'
 import AVALANCHE_LOGO_URL from '../assets/images/avalanche-logo.png'
+// TODO: replace logo
+import BERACHAIN_LOGO_URL from '../assets/images/berachain-logo.png'
 
 export enum SupportedNetwork {
   ETHEREUM,
@@ -17,6 +19,7 @@ export enum SupportedNetwork {
   BNB,
   BASE,
   AVALANCHE,
+  BERACHAIN,
 }
 
 export type NetworkInfo = {
@@ -117,8 +120,20 @@ export const AvalancheNetworkInfo: NetworkInfo = {
   imageURL: AVALANCHE_LOGO_URL,
 }
 
+export const BerachainNetworkInfo: NetworkInfo = {
+  chainId: 80094,
+  id: SupportedNetwork.BERACHAIN,
+  route: 'berachain',
+  name: 'Berachain',
+  bgColor: '#bc6940',
+  primaryColor: '#bc6940',
+  secondaryColor: '#bc6940',
+  imageURL: BERACHAIN_LOGO_URL,
+}
+
 export const SUPPORTED_NETWORK_VERSIONS: NetworkInfo[] = [
   EthereumNetworkInfo,
+  BerachainNetworkInfo,
   // PolygonNetworkInfo,
   // OptimismNetworkInfo,
   // ArbitrumNetworkInfo,

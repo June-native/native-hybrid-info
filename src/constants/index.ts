@@ -11,8 +11,10 @@ export const CELO_ADDRESS = '0x471EcE3750Da237f93B8E339c536989b8978a438'
 
 const WETH_ADDRESS = '0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2'
 const ARBITRUM_WETH_ADDRESS = '0x82af49447d8a07e3bd95bd0d56f35241523fbab1'
+// const BERACHAIN_WETH_ADDRESS = '0x6969696969696969696969696969696969696969'
+const BERACHAIN_WETH_ADDRESS = '0xEa91132E79559Be0Fcd6b1237DED28a31a226644'
 
-export const WETH_ADDRESSES = [WETH_ADDRESS, ARBITRUM_WETH_ADDRESS]
+export const WETH_ADDRESSES = [WETH_ADDRESS, ARBITRUM_WETH_ADDRESS, BERACHAIN_WETH_ADDRESS]
 
 export const TOKEN_HIDE: { [key: string]: string[] } = {
   [SupportedNetwork.ETHEREUM]: [
@@ -28,6 +30,7 @@ export const TOKEN_HIDE: { [key: string]: string[] } = {
   [SupportedNetwork.BNB]: [],
   [SupportedNetwork.AVALANCHE]: [],
   [SupportedNetwork.BASE]: [],
+  [SupportedNetwork.BERACHAIN]: [],
 }
 
 export const POOL_HIDE: { [key: string]: string[] } = {
@@ -47,6 +50,7 @@ export const POOL_HIDE: { [key: string]: string[] } = {
   [SupportedNetwork.BNB]: [],
   [SupportedNetwork.AVALANCHE]: [],
   [SupportedNetwork.BASE]: [],
+  [SupportedNetwork.BERACHAIN]: [],
 }
 
 export const START_BLOCKS: { [key: string]: number } = {
@@ -58,6 +62,7 @@ export const START_BLOCKS: { [key: string]: number } = {
   [SupportedNetwork.BNB]: 26324014,
   [SupportedNetwork.AVALANCHE]: 31422450,
   [SupportedNetwork.BASE]: 1371680,
+  [SupportedNetwork.BERACHAIN]: 3068808,
 }
 
 export interface WalletInfo {

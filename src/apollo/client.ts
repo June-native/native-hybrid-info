@@ -363,3 +363,52 @@ export const celoBlockClient = new ApolloClient({
     },
   },
 })
+
+export const berachainClient = new ApolloClient({
+  uri: 'https://gateway.thegraph.com/api/subgraphs/id/CZTvEDJA8jmCRJ9yLjeaBpKYTUVvVpz7qwSYJeoiaEM8',
+  headers: {
+    authorization: `Bearer abe84ae98ff6b28588d7319b50f88c5e`,
+  },
+  cache: new InMemoryCache({
+    typePolicies: {
+      Token: {
+        // Singleton types that have no identifying field can use an empty
+        // array for their keyFields.
+        keyFields: false,
+      },
+      Pool: {
+        // Singleton types that have no identifying field can use an empty
+        // array for their keyFields.
+        keyFields: false,
+      },
+    },
+  }),
+  queryDeduplication: true,
+  defaultOptions: {
+    watchQuery: {
+      fetchPolicy: 'no-cache',
+    },
+    query: {
+      fetchPolicy: 'no-cache',
+      errorPolicy: 'all',
+    },
+  },
+})
+
+export const berachainBlockClient = new ApolloClient({
+  uri: 'https://gateway.thegraph.com/api/subgraphs/id/Ef9JKwzpYHpEtqGEuCpyAif1EVeSgramKmUrD4fLMasx',
+  headers: {
+    authorization: `Bearer abe84ae98ff6b28588d7319b50f88c5e`,
+  },
+  cache: new InMemoryCache(),
+  queryDeduplication: true,
+  defaultOptions: {
+    watchQuery: {
+      fetchPolicy: 'cache-first',
+    },
+    query: {
+      fetchPolicy: 'cache-first',
+      errorPolicy: 'all',
+    },
+  },
+})
