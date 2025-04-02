@@ -9,7 +9,7 @@ export const healthClient = new ApolloClient({
 })
 
 export const blockClient = new ApolloClient({
-  uri: 'https://gateway.thegraph.com/api/subgraphs/id/9A6bkprqEG2XsZUYJ5B2XXp6ymz9fNcn4tVPxMWDztYC',
+  uri: 'https://gateway.thegraph.com/api/subgraphs/id/236pc6mnPH2EdGJxR5wunibyGsagq1JsSx5e2hx5tdoE',
   headers: {
     authorization: `Bearer abe84ae98ff6b28588d7319b50f88c5e`,
   },
@@ -27,7 +27,7 @@ export const blockClient = new ApolloClient({
 })
 
 export const client = new ApolloClient({
-  uri: 'https://gateway.thegraph.com/api/subgraphs/id/5zvR82QoaXYFyDEKLZ9t6v9adgnptxYpKpSbxtgVENFV',
+  uri: 'https://gateway.thegraph.com/api/subgraphs/id/6hXjt23gepeW56vJJTfQim1kVdm1bjEvqVZfu3tpGny6',
   cache: new InMemoryCache({
     typePolicies: {
       Token: {
