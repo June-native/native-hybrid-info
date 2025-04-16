@@ -1,9 +1,11 @@
 import { ApolloClient, InMemoryCache } from '@apollo/client'
 
+const theGraphKey = process.env.REACT_APP_THEGRAPH_KEY
+
 export const healthClient = new ApolloClient({
   uri: 'https://gateway.thegraph.com/api/subgraphs/id/9A6bkprqEG2XsZUYJ5B2XXp6ymz9fNcn4tVPxMWDztYC',
   headers: {
-    authorization: `Bearer abe84ae98ff6b28588d7319b50f88c5e`,
+    authorization: `Bearer ${theGraphKey}`,
   },
   cache: new InMemoryCache(),
 })
@@ -11,7 +13,7 @@ export const healthClient = new ApolloClient({
 export const blockClient = new ApolloClient({
   uri: 'https://gateway.thegraph.com/api/subgraphs/id/236pc6mnPH2EdGJxR5wunibyGsagq1JsSx5e2hx5tdoE',
   headers: {
-    authorization: `Bearer abe84ae98ff6b28588d7319b50f88c5e`,
+    authorization: `Bearer ${theGraphKey}`,
   },
   cache: new InMemoryCache(),
   queryDeduplication: true,
@@ -43,7 +45,7 @@ export const client = new ApolloClient({
     },
   }),
   headers: {
-    authorization: `Bearer abe84ae98ff6b28588d7319b50f88c5e`,
+    authorization: `Bearer ${theGraphKey}`,
   },
   queryDeduplication: true,
   defaultOptions: {
@@ -101,7 +103,10 @@ export const avalancheBlockClient = new ApolloClient({
 })
 
 export const arbitrumClient = new ApolloClient({
-  uri: 'https://api.thegraph.com/subgraphs/name/ianlapham/uniswap-arbitrum-one?source=uniswap',
+  uri: 'https://gateway.thegraph.com/api/subgraphs/id/m7jy1LL9aihKD7arZXwgkDHRoy1xp43LoVtPDuxVcjn',
+  headers: {
+    authorization: `Bearer ${theGraphKey}`,
+  },
   cache: new InMemoryCache({
     typePolicies: {
       Token: {
@@ -129,7 +134,10 @@ export const arbitrumClient = new ApolloClient({
 })
 
 export const arbitrumBlockClient = new ApolloClient({
-  uri: 'https://api.thegraph.com/subgraphs/name/ianlapham/arbitrum-one-blocks',
+  uri: 'https://gateway.thegraph.com/api/subgraphs/id/5jebsN6RBioFWQX7LP2N8r55nL4QPAyeKc6GzDA1Pt5H',
+  headers: {
+    authorization: `Bearer ${theGraphKey}`,
+  },
   cache: new InMemoryCache(),
   queryDeduplication: true,
   defaultOptions: {
@@ -172,9 +180,9 @@ export const optimismClient = new ApolloClient({
 })
 
 export const baseClient = new ApolloClient({
-  uri: 'https://gateway.thegraph.com/api/subgraphs/id/3NUY93m3pDzhT4numRAoxVaKWUhrQPBu6KZ5feeB5igy',
+  uri: 'https://gateway.thegraph.com/api/subgraphs/id/HXvzRFSnvUPQaNo99zZc7PzCyRyGb5u57H8tzL4bfAdW',
   headers: {
-    authorization: `Bearer abe84ae98ff6b28588d7319b50f88c5e`,
+    authorization: `Bearer ${theGraphKey}`,
   },
   cache: new InMemoryCache({
     typePolicies: {
@@ -203,9 +211,9 @@ export const baseClient = new ApolloClient({
 })
 
 export const baseBlockClient = new ApolloClient({
-  uri: 'https://gateway.thegraph.com/api/subgraphs/id/8k66QCiBQGaTE4Vg62UpQL9Umhr5JQ3V6KcPNy1vvBaT',
+  uri: 'https://gateway.thegraph.com/api/subgraphs/id/GU5jJMiEHpomqddtbsXC3Avj3EweLHk6up1pvy2TCQQZ',
   headers: {
-    authorization: `Bearer abe84ae98ff6b28588d7319b50f88c5e`,
+    authorization: `Bearer ${theGraphKey}`,
   },
   cache: new InMemoryCache(),
   queryDeduplication: true,
@@ -221,7 +229,7 @@ export const baseBlockClient = new ApolloClient({
 })
 
 export const bscClient = new ApolloClient({
-  uri: 'https://api.thegraph.com/subgraphs/name/ianlapham/uniswap-v3-bsc?source=uniswap',
+  uri: 'https://gateway.thegraph.com/api/subgraphs/id/8171zkXXXz6pv98vpRwnTUueKCU2eHuu9BMxT8UR8KbB',
   cache: new InMemoryCache({
     typePolicies: {
       Token: {
@@ -236,6 +244,9 @@ export const bscClient = new ApolloClient({
       },
     },
   }),
+  headers: {
+    authorization: `Bearer ${theGraphKey}`,
+  },
   queryDeduplication: true,
   defaultOptions: {
     watchQuery: {
@@ -249,9 +260,12 @@ export const bscClient = new ApolloClient({
 })
 
 export const bscBlockClient = new ApolloClient({
-  uri: 'https://api.thegraph.com/subgraphs/name/wombat-exchange/bnb-chain-block',
+  uri: 'https://gateway.thegraph.com/api/subgraphs/id/9dSPXfKXaqYpoGAPXx96LyDF1VYR8PiT6HA7HRKEGRdS',
   cache: new InMemoryCache(),
   queryDeduplication: true,
+  headers: {
+    authorization: `Bearer ${theGraphKey}`,
+  },
   defaultOptions: {
     watchQuery: {
       fetchPolicy: 'cache-first',
@@ -367,7 +381,7 @@ export const celoBlockClient = new ApolloClient({
 export const berachainClient = new ApolloClient({
   uri: 'https://gateway.thegraph.com/api/subgraphs/id/CZTvEDJA8jmCRJ9yLjeaBpKYTUVvVpz7qwSYJeoiaEM8',
   headers: {
-    authorization: `Bearer abe84ae98ff6b28588d7319b50f88c5e`,
+    authorization: `Bearer ${theGraphKey}`,
   },
   cache: new InMemoryCache({
     typePolicies: {
@@ -398,7 +412,7 @@ export const berachainClient = new ApolloClient({
 export const berachainBlockClient = new ApolloClient({
   uri: 'https://gateway.thegraph.com/api/subgraphs/id/Ef9JKwzpYHpEtqGEuCpyAif1EVeSgramKmUrD4fLMasx',
   headers: {
-    authorization: `Bearer abe84ae98ff6b28588d7319b50f88c5e`,
+    authorization: `Bearer ${theGraphKey}`,
   },
   cache: new InMemoryCache(),
   queryDeduplication: true,

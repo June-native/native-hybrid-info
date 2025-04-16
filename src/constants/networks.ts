@@ -38,8 +38,8 @@ export const EthereumNetworkInfo: NetworkInfo = {
   id: SupportedNetwork.ETHEREUM,
   route: '',
   name: 'Ethereum',
-  bgColor: '#fc077d',
-  primaryColor: '#fc077d',
+  bgColor: '#5c74d0',
+  primaryColor: '#5c74d0',
   secondaryColor: '#2172E5',
   imageURL: ETHEREUM_LOGO_URL,
 }
@@ -136,9 +136,9 @@ export const SUPPORTED_NETWORK_VERSIONS: NetworkInfo[] = [
   BerachainNetworkInfo,
   // PolygonNetworkInfo,
   // OptimismNetworkInfo,
-  // ArbitrumNetworkInfo,
+  ArbitrumNetworkInfo,
   // CeloNetworkInfo,
-  // BNBNetworkInfo,
+  BNBNetworkInfo,
   BaseNetworkInfo,
   // AvalancheNetworkInfo,
 ]
