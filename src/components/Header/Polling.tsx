@@ -6,7 +6,7 @@ import { useActiveNetworkVersion, useSubgraphStatus } from '../../state/applicat
 import { ExplorerDataType, getExplorerLink } from '../../utils'
 import useTheme from 'hooks/useTheme'
 import { EthereumNetworkInfo } from 'constants/networks'
-import { ChainId } from '@uniswap/sdk-core'
+import { ChainId } from '@june-native/native-hybrid-sdk-core'
 
 const StyledPolling = styled.div`
   display: flex;

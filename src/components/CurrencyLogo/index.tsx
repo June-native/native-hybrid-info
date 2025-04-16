@@ -7,7 +7,7 @@ import useHttpLocations from 'hooks/useHttpLocations'
 import { useActiveNetworkVersion } from 'state/application/hooks'
 import { OptimismNetworkInfo } from 'constants/networks'
 import EthereumLogo from '../../assets/images/ethereum-logo.png'
-import { ChainId } from '@uniswap/sdk-core'
+import { ChainId } from '@june-native/native-hybrid-sdk-core'
 
 export function chainIdToNetworkName(networkId: ChainId) {
   switch (networkId) {

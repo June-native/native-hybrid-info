@@ -1,4 +1,4 @@
-import { Token } from '@uniswap/sdk-core'
+import { Token } from '@june-native/native-hybrid-sdk-core'
 import { CeloNetworkInfo, NetworkInfo, PolygonNetworkInfo } from 'constants/networks'
 import { CELO_ADDRESS, MATIC_ADDRESS, WETH_ADDRESSES } from '../constants'
 

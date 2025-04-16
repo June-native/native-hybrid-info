@@ -2374,6 +2374,18 @@
     "@jridgewell/resolve-uri" "^3.1.0"
     "@jridgewell/sourcemap-codec" "^1.4.14"
 
+"@june-native/native-hybrid-sdk-core@^5.0.1":
+  version "5.0.1"
+  resolved "https://registry.yarnpkg.com/@june-native/native-hybrid-sdk-core/-/native-hybrid-sdk-core-5.0.1.tgz#42c6736e70946c67a77f412b279878d57dbbe36d"
+  integrity sha512-FRSlaU/GJRkNOnZS1CagJmvelxEWU1dYUS9FESEFlHNFZXV06vI6VwgPyLke14zJ/DlYb3kk4NVuS6DvbyHkug==
+  dependencies:
+    "@ethersproject/address" "^5.0.2"
+    big.js "^5.2.2"
+    decimal.js-light "^2.5.0"
+    jsbi "^3.1.4"
+    tiny-invariant "^1.1.0"
+    toformat "^2.0.0"
+
 "@leichtgewicht/ip-codec@^2.0.1":
   version "2.0.4"
   resolved "https://registry.yarnpkg.com/@leichtgewicht/ip-codec/-/ip-codec-2.0.4.tgz#b2ac626d6cb9c8718ab459166d4bb405b8ffa78b"

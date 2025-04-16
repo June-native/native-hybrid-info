@@ -42,7 +42,7 @@ import { useCMCLink } from 'hooks/useCMCLink'
 import CMCLogo from '../../assets/images/cmc.png'
 import { useParams } from 'react-router-dom'
 import { Trace } from '@uniswap/analytics'
-import { ChainId } from '@uniswap/sdk-core'
+import { ChainId } from '@june-native/native-hybrid-sdk-core'
 
 const PriceText = styled(TYPE.label)`
   font-size: 36px;

@@ -15,7 +15,7 @@ import useTheme from 'hooks/useTheme'
 import HoverInlineText from 'components/HoverInlineText'
 import { useActiveNetworkVersion } from 'state/application/hooks'
 import { OptimismNetworkInfo } from 'constants/networks'
-import { ChainId } from '@uniswap/sdk-core'
+import { ChainId } from '@june-native/native-hybrid-sdk-core'
 
 const Wrapper = styled(DarkGreyCard)`
   width: 100%;

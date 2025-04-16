@@ -5,7 +5,7 @@ import POLYGON_LOGO_URL from '../assets/images/polygon-logo.png'
 import CELO_LOGO_URL from '../assets/images/celo-logo.svg'
 import BNB_LOGO_URL from '../assets/images/bnb-logo.svg'
 import BASE_LOGO_URL from '../assets/images/base-logo.svg'
-import { ChainId } from '@uniswap/sdk-core'
+import { ChainId } from '@june-native/native-hybrid-sdk-core'
 import AVALANCHE_LOGO_URL from '../assets/images/avalanche-logo.png'
 // TODO: replace logo
 import BERACHAIN_LOGO_URL from '../assets/images/berachain-logo.png'
