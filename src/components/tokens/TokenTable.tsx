@@ -9,7 +9,6 @@ import { AutoColumn } from 'components/Column'
 import CurrencyLogo from 'components/CurrencyLogo'
 import { RowFixed } from 'components/Row'
 import { formatDollarAmount } from 'utils/numbers'
-import Percent from 'components/Percent'
 import { Label, ClickableText } from '../Text'
 import { PageButtons, Arrow, Break } from 'components/shared'
 import HoverInlineText from '../HoverInlineText'
@@ -26,18 +25,18 @@ const ResponsiveGrid = styled.div`
   grid-gap: 1em;
   align-items: center;
 
-  grid-template-columns: 20px 3fr repeat(4, 1fr);
+  grid-template-columns: 20px 3fr repeat(3, 1fr);
 
   @media screen and (max-width: 900px) {
-    grid-template-columns: 20px 1.5fr repeat(3, 1fr);
+    grid-template-columns: 20px 1.5fr repeat(2, 1fr);
     & :nth-child(4) {
       display: none;
     }
   }
 
   @media screen and (max-width: 800px) {
-    grid-template-columns: 20px 1.5fr repeat(2, 1fr);
-    & :nth-child(6) {
+    grid-template-columns: 20px 1.5fr repeat(1, 1fr);
+    & :nth-child(5) {
       display: none;
     }
   }
@@ -94,9 +93,6 @@ const DataRow = ({ tokenData, index }: { tokenData: TokenData; index: number }) 
           {formatDollarAmount(tokenData.priceUSD)}
         </Label>
         <Label end={1} fontWeight={400}>
-          <Percent value={tokenData.priceUSDChange} fontWeight={400} />
-        </Label>
-        <Label end={1} fontWeight={400}>
           {formatDollarAmount(tokenData.volumeUSD)}
         </Label>
         <Label end={1} fontWeight={400}>
@@ -112,8 +108,6 @@ const SORT_FIELD = {
   volumeUSD: 'volumeUSD',
   tvlUSD: 'tvlUSD',
   priceUSD: 'priceUSD',
-  priceUSDChange: 'priceUSDChange',
-  priceUSDChangeWeek: 'priceUSDChangeWeek',
 }
 
 const MAX_ITEMS = 10
@@ -195,12 +189,6 @@ export default function TokenTable({
             <ClickableText color={theme?.text2} end={1} onClick={() => handleSort(SORT_FIELD.priceUSD)}>
               Price {arrow(SORT_FIELD.priceUSD)}
             </ClickableText>
-            <ClickableText color={theme?.text2} end={1} onClick={() => handleSort(SORT_FIELD.priceUSDChange)}>
-              Price Change {arrow(SORT_FIELD.priceUSDChange)}
-            </ClickableText>
-            {/* <ClickableText end={1} onClick={() => handleSort(SORT_FIELD.priceUSDChangeWeek)}>
-            7d {arrow(SORT_FIELD.priceUSDChangeWeek)}
-          </ClickableText> */}
             <ClickableText color={theme?.text2} end={1} onClick={() => handleSort(SORT_FIELD.volumeUSD)}>
               Volume 24H {arrow(SORT_FIELD.volumeUSD)}
             </ClickableText>

@@ -10,11 +10,14 @@ import { PriceChartEntry } from 'types'
 dayjs.extend(utc)
 dayjs.extend(weekOfYear)
 
+// block: { number: ${block.number} },
 export const PRICES_BY_BLOCK = (tokenAddress: string, blocks: any) => {
   let queryString = 'query blocks {'
   queryString += blocks.map(
     (block: any) => `
-      t${block.timestamp}:token(id:"${tokenAddress}", block: { number: ${block.number} }, subgraphError: allow) { 
+      t${block.timestamp}:token(id:"${tokenAddress}", 
+      
+      subgraphError: allow) { 
         derivedETH
       }
     `,
@@ -22,7 +25,9 @@ export const PRICES_BY_BLOCK = (tokenAddress: string, blocks: any) => {
   queryString += ','
   queryString += blocks.map(
     (block: any) => `
-      b${block.timestamp}: bundle(id:"1", block: { number: ${block.number} }, subgraphError: allow) { 
+      b${block.timestamp}: bundle(id:"1",
+      
+      subgraphError: allow) { 
         ethPriceUSD
       }
     `,

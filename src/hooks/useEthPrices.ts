@@ -12,18 +12,19 @@ export interface EthPrices {
   week: number
 }
 
+// block: { number: $block24 },
 export const ETH_PRICES = gql`
-  query prices($block24: Int!, $block48: Int!, $blockWeek: Int!) {
+  query prices {
     current: bundles(first: 1, subgraphError: allow) {
       ethPriceUSD
     }
-    oneDay: bundles(first: 1, block: { number: $block24 }, subgraphError: allow) {
+    oneDay: bundles(first: 1, subgraphError: allow) {
       ethPriceUSD
     }
-    twoDay: bundles(first: 1, block: { number: $block48 }, subgraphError: allow) {
+    twoDay: bundles(first: 1, subgraphError: allow) {
       ethPriceUSD
     }
-    oneWeek: bundles(first: 1, block: { number: $blockWeek }, subgraphError: allow) {
+    oneWeek: bundles(first: 1, subgraphError: allow) {
       ethPriceUSD
     }
   }

@@ -8,7 +8,6 @@ import useTheme from 'hooks/useTheme'
 import { useProtocolChartData, useProtocolData, useProtocolTransactions } from 'state/protocol/hooks'
 import { DarkGreyCard } from 'components/Card'
 import { formatDollarAmount } from 'utils/numbers'
-import Percent from 'components/Percent'
 import { HideMedium, HideSmall, StyledInternalLink } from '../../theme/components'
 import TokenTable from 'components/tokens/TokenTable'
 import PoolTable from 'components/pools/PoolTable'
@@ -217,19 +216,16 @@ export default function Home() {
                   <RowFixed mr="20px">
                     <TYPE.main mr="4px">Volume 24H: </TYPE.main>
                     <TYPE.label mr="4px">{formatDollarAmount(protocolData?.volumeUSD)}</TYPE.label>
-                    <Percent value={protocolData?.volumeUSDChange} wrap={true} />
                   </RowFixed>
                   <RowFixed mr="20px">
                     <TYPE.main mr="4px">Fees 24H: </TYPE.main>
                     <TYPE.label mr="4px">{formatDollarAmount(protocolData?.feesUSD)}</TYPE.label>
-                    <Percent value={protocolData?.feeChange} wrap={true} />
                   </RowFixed>
                   <HideMedium>
                     <RowFixed mr="20px">
                       <TYPE.main mr="4px">TVL: </TYPE.main>
                       <TYPE.label mr="4px">{formatDollarAmount(protocolData?.tvlUSD)}</TYPE.label>
                       <TYPE.main></TYPE.main>
-                      <Percent value={protocolData?.tvlUSDChange} wrap={true} />
                     </RowFixed>
                   </HideMedium>
                 </RowFixed>

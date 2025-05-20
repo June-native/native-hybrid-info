@@ -3,7 +3,7 @@ import { ApolloClient, InMemoryCache } from '@apollo/client'
 const theGraphKey = process.env.REACT_APP_THEGRAPH_KEY
 
 export const healthClient = new ApolloClient({
-  uri: 'https://gateway.thegraph.com/api/subgraphs/id/9A6bkprqEG2XsZUYJ5B2XXp6ymz9fNcn4tVPxMWDztYC',
+  uri: 'https://gateway.thegraph.com/api/subgraphs/id/236pc6mnPH2EdGJxR5wunibyGsagq1JsSx5e2hx5tdoE',
   headers: {
     authorization: `Bearer ${theGraphKey}`,
   },

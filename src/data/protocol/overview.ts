@@ -8,10 +8,10 @@ import { useMemo } from 'react'
 import { useClients } from 'state/application/hooks'
 import { useTVLOffset } from './derived'
 
+// ${block !== undefined && block != '0' ? `block: { number: ${block}}` : ``}
 export const GLOBAL_DATA = (block?: string) => {
   const queryString = ` query uniswapFactories {
       factories(
-       ${block !== undefined ? `block: { number: ${block}}` : ``} 
        first: 1, subgraphError: allow) {
         txCount
         totalVolumeUSD
@@ -19,6 +19,7 @@ export const GLOBAL_DATA = (block?: string) => {
         totalValueLockedUSD
       }
     }`
+  console.log(`uniswapFactories:`, block)
   return gql(queryString)
 }
 
