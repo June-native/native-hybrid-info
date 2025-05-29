@@ -30,6 +30,7 @@ export const blockClient = new ApolloClient({
 
 export const client = new ApolloClient({
   uri: 'https://gateway.thegraph.com/api/subgraphs/id/6hXjt23gepeW56vJJTfQim1kVdm1bjEvqVZfu3tpGny6',
+  // uri: 'https://subgraph.satsuma-prod.com/c6c04c9f9ccc/native--338080/native-hybrid-ethereum-mainnet/version/0.0.0.4/api',
   cache: new InMemoryCache({
     typePolicies: {
       Token: {
